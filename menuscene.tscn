@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://wfj8mmtlh7m1"]
+
+[ext_resource type="Texture2D" uid="uid://bidkpmvdmgxa5" path="res://Free/Background/Pink.png" id="1_y7wg6"]
+[ext_resource type="Texture2D" uid="uid://87t3ufuxw2ht" path="res://scenes/cooltext492363768668825.png" id="2_xl12t"]
+
+[sub_resource type="GDScript" id="GDScript_c5nyq"]
+resource_name = "menuscene"
+script/source = "extends Node2D
+
+func _on_level_1_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/DayDreamGame.tscn\")
+	
+
+
+func _on_level_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/level2.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_y7wg6"]
+resource_name = "button 3"
+script/source = "extends Button
+func _on_level_3_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/lvl3.ts\")
+"
+
+[node name="Menuscene" type="Node2D"]
+script = SubResource("GDScript_c5nyq")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_top = 10.0
+offset_right = 1151.0
+offset_bottom = 678.0
+texture = ExtResource("1_y7wg6")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 233.0
+offset_top = 136.0
+offset_right = 897.0
+offset_bottom = 359.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_xl12t")
+
+[node name="level 1" type="Button" parent="."]
+offset_left = 326.0
+offset_top = 424.0
+offset_right = 487.0
+offset_bottom = 500.0
+text = "Level 1"
+
+[node name="level 2" type="Button" parent="."]
+offset_left = 608.0
+offset_top = 428.0
+offset_right = 763.0
+offset_bottom = 503.0
+text = "Level 2"
+
+[node name="level 3" type="Button" parent="."]
+offset_left = 500.0
+offset_top = 552.0
+offset_right = 673.0
+offset_bottom = 616.0
+text = "level 3
+"
+script = SubResource("GDScript_y7wg6")
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level 3" to="." method="_on_level_3_pressed"]

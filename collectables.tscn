@@ -1,0 +1,162 @@
+[gd_scene load_steps=22 format=3 uid="uid://d31fvqq08ffqe"]
+
+[ext_resource type="Texture2D" uid="uid://blnq7rf18foxo" path="res://Free/Items/Fruits/Strawberry.png" id="1_xf80n"]
+
+[sub_resource type="GDScript" id="GDScript_xf80n"]
+resource_name = "collectables"
+script/source = "extends Area2D
+@onready var game_manager: Node = %gameManager
+
+func _on_body_entered(body: Node2D) -> void:
+	queue_free()
+	game_manager.add_point()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6gme"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxofk"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7gpa"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gguo1"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klqdr"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voxl4"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0y0b"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldhml"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc8xh"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8dl7"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eldaw"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xn54"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofjjc"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbw80"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyprl"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt8ad"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhlw"]
+atlas = ExtResource("1_xf80n")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bbu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6gme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxofk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7gpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gguo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klqdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voxl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0y0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldhml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc8xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8dl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eldaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xn54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofjjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbw80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyprl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt8ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4flr"]
+radius = 16.0
+height = 42.0
+
+[node name="collectables" type="Area2D"]
+script = SubResource("GDScript_xf80n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(325.00003, 477)
+scale = Vector2(3.3125007, 2.3906271)
+sprite_frames = SubResource("SpriteFrames_5bbu5")
+autoplay = "default"
+frame = 7
+frame_progress = 0.21485956
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(327, 477)
+shape = SubResource("CapsuleShape2D_p4flr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
